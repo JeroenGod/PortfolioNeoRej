@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Portfolio Jeroen Goddemaer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="../css/basic.css">
+    </head>
+    <body id="linkbody">        
+        <div class="main">            
+            <header>
+                <div id="graph">
+                    <img src="../images/graffiti-Recovered.png" alt="graffiti">
+                    <h1>&#60;portfolio id=jeroen goddemaer&#62;</h1>
+                </div>                
+            </header>
+            <div id="linkcenter">
+                <nav id="menu">
+                    <ul>
+                        <li><div id="dropdown"><a href="#">&Xi;</a><span>&nabla;</span></div>            
+                            <ul>
+                                <li><a href="../index.html" class="symbol">#</a><a href="../index.html" class="word">home</a></li>
+                                <li><a href="about.html" class="symbol">&oplus;</a><a href="about.html" class="word">about me</a></li>
+                                <li><a href="portfolio.html" class="symbol">&lowast;</a><a href="portfolio.html" class="word">portfolio</a></li>
+                                <li><a href="hobbies.html" class="symbol">&otimes;</a><a href="hobbies.html" class="word">hobbies</a></li>
+                                <li class="selected"><a href="links.html" class="symbol">&infin;</a><a href="links.html" class="word">links</a></li>
+                                <li><a href="contact.html" class="symbol">@</a><a href="contact.html" class="word">contact</a></li>
+                            </ul> 
+                        </li>
+                    </ul>
+                </nav>
+                <aside>
+                    <p><a href="http://validator.w3.org/check?uri=referer">W3C validate</a></p>
+                </aside>
+                <div class="art" id="linkart">
+                    <h2>&#60;interessante links&#62;</h2>
+                    <h2>responsive web design</h2>
+                    <article>
+                        <p>
+                            Smartphones en tablets zijn al een tijdje in opmars. Door hun afmetingen zijn ze zeer handig om mee te nemen, 
+                            maar geven bepaalde websites quasi onleesbaar weer of de lay-out is volledig door elkaar gehaald.
+                            De oplossing was om een aparte mobiele site ernaast te maken, wat veel tijd in beslag neemt. 
+                            Nu is de nieuwe trend om &eacute;&eacute;nzelde website op maat weer te geven voor zoveel mogelijk platforms. 
+                            Dit fenomeen noemt men Responsive Web Design. Voorbeelden hiervan vind je bij 
+                            <a href='http://www.theguardian.com/info/developer-blog/2013/oct/14/mobile-first-responsive-ie8'>The Guardian</a> 
+                            en <a href='http://responsivenews.co.uk/post/51567651162/response-ish-web-design'>BBC News</a>.
+                        </p>
+                        <p>
+                            Ik heb getracht mijn website ook zo <i>responsive</i> mogelijk te maken. Door middel van 
+                            <a href='http://www.w3.org/TR/css3-mediaqueries/'>CSS3 media queries</a> en 
+                            <a href='http://www.htmlgoodies.com/html5/client/common-techniques-in-responsive-web-design.html#fbid=2DwadN46E3r'>common techniques in RWD</a>
+                            heb ik mijn <i>stylesheet</i> opgedeeld in 5 stukken: 
+                            voor smartphones, tablets in staande en in liggende ori&euml;ntatie, netbooks en desktops. Mijn <i>stylesheet</i> is dan ook vrij lang geworden.
+                        </p>
+                        <p>
+                            Niet alleen in de afmetingen heb je verschillen, browsers geven een website elk op hun eigen manier weer. 
+                            Verscheidene eigenschappen van CSS3 worden niet ondersteund in bepaalde browsers. 
+                            Microsoft's Internet Explorer is daarin wel een heel speciaal geval. De oudere versies ondersteunen bijna niets. 
+                            Ik heb mijn site uitvoerig getest in Google Chrome, Mozilla Firefox en Android. Dankzij deze 
+                            <a href='http://interactiveblend.com/blog/online/cross-browser-compatibility-with-css3/'>handige tools</a> 
+                            kun je stylesheets ontwerpen die compatibel zijn voor alle browsers. Voor alle duidelijkheid: ik heb ze zelf (nog) niet gebruikt. 
+                        </p>
+                    </article>                    
+                    <h2>mobiele platforms</h2>
+                    <article class='linklist'>
+                        <p>
+                            Hieronder nog een paar nuttige tips om een mobiele layout te cre&euml;ren:
+                        </p>
+                        <ul>
+                            <li><a href='http://css3wizardry.com/'>CSS3 Wizardry</a></li>
+                            <li><a href='http://css3wizardry.com/2011/01/30/the-holy-grail-of-mobile-layout/'>The Holy Grail of Mobile Layout</a></li>
+                            <li><a href='http://buildcontext.com/'>Buildcontext</a></li>
+                        </ul>
+                    </article>
+                    <h2>android</h2>
+                    <article class='linklist'>
+                        <p>
+                            Om mijn website op een Android smartphone te testen heb ik verschillende mogelijkheden ge&euml;xploreerd.
+                            Eerst uploade ik mijn site via <a href='https://filezilla-project.org/'>Filezilla</a> naar de server van de school 
+                            om ze daarna te openen in mijn Samsung Galaxy gsm. Redelijk omslachtig. 
+                            Na veel vijven en zessen vond ik uiteindelijk een tutorial om via een 
+                            <a href='http://buildcontext.com/blog/2011/android-browser-emulator-windows-7-nexus-s-xoom-tablet'>Android Browser Emulator</a> 
+                            mijn aanpassingen in <a href='https://netbeans.org'>Netbeans</a> sneller te testen.
+                        </p>
+                        <p id='tutorial'>                            
+                            <a href='http://developer.android.com/tools/index.html'>
+                                Download en installeer Android SDK Tool for Windows om met een bestaande IDE (editor) te werken; 
+                                start 'SDK Manager', selecteer je Android platform(s) naar keuze en installeer ze; 
+                                start 'AVD Manager', configureer je 'Android Virtual Device', start hem.<br> 
+                                In Netbeans > Tools > Options > Misc > Mobile Platforms: typ hier je Android SDK path 
+                                (C:\Program Files\Android\android-sdk) - run project in Android Emulator mode.
+                            </a>
+                        </p>
+                        <p>
+                            Nog een paar andere methodes om je project op je PC in een virtuele Android omgeving te testen:
+                        </p>
+                        <ul>
+                            <li><a href='http://windowsandroid.en.softonic.com/'>WindowsAndroid</a></li>
+                            <li><a href='http://www.socketeq.com/'>Windroy</a></li>
+                            <li><a href='https://developers.google.com/chrome-developer-tools/docs/mobile-emulation'>Mobile Emulation met touch events in Google Chrome</a></li>
+                        </ul>
+                    </article>
+                    <h2>Internet Explorer</h2>
+                    <article>
+                        <p>
+                            Met Internet Explorer heb ik de meeste problemen ondervonden: tot en met IE8 is er geen support voor CSS3. 
+                            Naar ik gelezen heb op <a href='http://www.onextrapixel.com/2012/05/24/css3-compatibility-tools-resources-and-references-for-internet-explorer/'>One Extra Pixel</a> 
+                            kan je dit omzeilen door bijvoorbeeld een Javascript document toe te voegen. 
+                            In latere versies worden meer toepassingen ondersteund door de vendor-prefix "-ms-" toe te voegen aan de CSS3 property. 
+                            In de lijst van <a href='http://msdn.microsoft.com/en-us/library/hh781508(v=vs.85).aspx'>CSS compatibiliteit in Internet Explorer</a> 
+                            kun je verifi&euml;ren wat juist in welke versie ondersteund wordt.
+                        </p>
+                    </article>
+                    <h2>extra's</h2>
+                    <article class='linklist'>
+                        <ul>
+                            <li><a href='http://tools.dynamicdrive.com/favicon/#.UqBcysQ2bpw'>Favicon Generator</a></li>
+                            <li><a href='http://www.creativeverse.com/40-css3-html5-dropdown-menus/'>40 gratis Dropdown Menu's</a></li>
+                        </ul>
+                    </article>
+                </div>                
+            </div>            
+        </div>
+        <footer id="linkfoot">
+            <b>Berlin</b><b class="copy">&copy;neo-rej</b>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,2883 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 3, 2013, 10:21:09 PM
+    Author     : neo-rej
+*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;    
+    vertical-align: baseline;
+    background-clip: padding-box;
+}
+body{
+    font-family: "Lucida Sans Unicode", Calibri, Verdana, sans-serif;
+    line-height: 1.3;
+}
+header, nav, article, aside, footer{
+    display: block;
+}
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;	
+}
+.main{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+h1{
+    font-family: monospace, serif;
+    color: silver;
+    text-shadow: 2px 2px 3px black;
+}
+.art ol{
+    padding-left: 1.5em;
+}
+.art p, ol li{
+    padding-bottom: 0.5em;
+}
+dt{
+    font-weight: bold;
+}
+ul{
+    list-style-type: none;
+}
+.art li a{
+    display: block;
+    background: dimgrey;
+    padding: 0.5em;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px black inset;
+}
+.linklist ul, #tutorial{
+    background: grey;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    text-align: center;
+    padding: 0.5em;
+    border: 2px dotted black;
+    border-radius: 11px;
+}
+.art a{
+    color: whitesmoke;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px black;
+    display: inline-block;
+    background: dimgrey;
+    border-radius: 5px;
+    padding: 0 2px;
+    box-shadow: 1px 1px 2px black inset;
+}
+#tutorial a{
+    display: block;
+    background: dimgrey;
+}
+.art a:hover, #tutorial a:hover{
+    color: white;
+    text-shadow: 1px 1px 2px #C03;
+    background-color: grey;
+    border-radius: 0;
+    box-shadow: none;
+    
+}
+@-webkit-keyframes fade{
+    0% {opacity: 0;}
+    15% {opacity: 1;}
+    30% {opacity: 0;}
+}
+@-moz-keyframes fade{
+    0% {opacity: 0;}
+    15% {opacity: 1;}
+    30% {opacity: 0;}
+}
+@-ms-keyframes fade{
+    0% {opacity: 0;}
+    15% {opacity: 1;}
+    30% {opacity: 0;}
+}
+@-o-keyframes fade{
+    0% {opacity: 0;}
+    15% {opacity: 1;}
+    30% {opacity: 0;}
+}
+@keyframes fade{
+    0% {opacity: 0;}
+    15% {opacity: 1;}
+    30% {opacity: 0;}
+}
+@-webkit-keyframes slide{
+    0% { top: 0px;}
+    15% { top: 0px; -webkit-transform: translateY(-180px);}
+    20% { top: -180px;}
+    35% { top: -180px; -webkit-transform: translateY(-360px);}
+    40% { top: -360px;}
+    55% { top: -360px; -webkit-transform: translateY(-540px);}
+    60% { top: -540px;}
+    75% { top: -540px; -webkit-transform: translateY(-720px);}
+    80% { top: -720px;}
+    95% { top: -720px; -webkit-transform: translateY(0px);}
+    100% { top: 0px;}
+}
+@-moz-keyframes slide{
+    0% { top: 0px;}
+    15% { top: 0px; -moz-transform: translateY(-180px);}
+    20% { top: -180px;}
+    35% { top: -180px; -moz-transform: translateY(-360px);}
+    40% { top: -360px;}
+    55% { top: -360px; -moz-transform: translateY(-540px);}
+    60% { top: -540px;}
+    75% { top: -540px; -moz-transform: translateY(-720px);}
+    80% { top: -720px;}
+    95% { top: -720px; -moz-transform: translateY(0px);}
+    100% { top: 0px;}
+}
+@-ms-keyframes slide{
+    0% { top: 0px;}
+    15% { top: 0px; -ms-transform: translateY(-180px);}
+    20% { top: -180px;}
+    35% { top: -180px; -ms-transform: translateY(-360px);}
+    40% { top: -360px;}
+    55% { top: -360px; -ms-transform: translateY(-540px);}
+    60% { top: -540px;}
+    75% { top: -540px; -ms-transform: translateY(-720px);}
+    80% { top: -720px;}
+    95% { top: -720px; -ms-transform: translateY(0px);}
+    100% { top: 0px;}
+}
+@-o-keyframes slide{
+    0% { top: 0px;}
+    15% { top: 0px; -o-transform: translateY(-180px);}
+    20% { top: -180px;}
+    35% { top: -180px; -o-transform: translateY(-360px);}
+    40% { top: -360px;}
+    55% { top: -360px; -o-transform: translateY(-540px);}
+    60% { top: -540px;}
+    75% { top: -540px; -o-transform: translateY(-720px);}
+    80% { top: -720px;}
+    95% { top: -720px; -o-transform: translateY(0px);}
+    100% { top: 0px;}
+}
+@keyframes slide{
+    0% { top: 0px;}
+    15% { top: 0px; transform: translateY(-180px);}
+    20% { top: -180px;}
+    35% { top: -180px; transform: translateY(-360px);}
+    40% { top: -360px;}
+    55% { top: -360px; transform: translateY(-540px);}
+    60% { top: -540px;}
+    75% { top: -540px; transform: translateY(-720px);}
+    80% { top: -720px;}
+    95% { top: -720px; transform: translateY(0px);}
+    100% { top: 0px;}
+}
+@-webkit-keyframes slides{
+    0% { top: 0px;}
+    15% { top: 0px; -webkit-transform: translateY(-120px);}
+    20% { top: -120px;}
+    35% { top: -120px; -webkit-transform: translateY(-240px);}
+    40% { top: -240px;}
+    55% { top: -240px; -webkit-transform: translateY(-360px);}
+    60% { top: -360px;}
+    75% { top: -360px; -webkit-transform: translateY(-480px);}
+    80% { top: -480px;}
+    95% { top: -480px; -webkit-transform: translateY(0px);}
+    100% { top: 0px;}
+}
+@-moz-keyframes slides{
+    0% { top: 0px;}
+    15% { top: 0px; -moz-transform: translateY(-120px);}
+    20% { top: -120px;}
+    35% { top: -120px; -moz-transform: translateY(-240px);}
+    40% { top: -240px;}
+    55% { top: -240px; -moz-transform: translateY(-360px);}
+    60% { top: -360px;}
+    75% { top: -360px; -moz-transform: translateY(-480px);}
+    80% { top: -480px;}
+    95% { top: -480px; -moz-transform: translateY(0px);}
+    100% { top: 0px;}
+}
+@-ms-keyframes slides{
+    0% { top: 0px;}
+    15% { top: 0px; -ms-transform: translateY(-120px);}
+    20% { top: -120px;}
+    35% { top: -120px; -ms-transform: translateY(-240px);}
+    40% { top: -240px;}
+    55% { top: -240px; -ms-transform: translateY(-360px);}
+    60% { top: -360px;}
+    75% { top: -360px; -ms-transform: translateY(-480px);}
+    80% { top: -480px;}
+    95% { top: -480px; -ms-transform: translateY(0px);}
+    100% { top: 0px;}
+}
+@-o-keyframes slides{
+    0% { top: 0px;}
+    15% { top: 0px; -o-transform: translateY(-120px);}
+    20% { top: -120px;}
+    35% { top: -120px; -o-transform: translateY(-240px);}
+    40% { top: -240px;}
+    55% { top: -240px; -o-transform: translateY(-360px);}
+    60% { top: -360px;}
+    75% { top: -360px; -o-transform: translateY(-480px);}
+    80% { top: -480px;}
+    95% { top: -480px; -o-transform: translateY(0px);}
+    100% { top: 0px;}
+}
+@keyframes slides{
+    0% { top: 0px;}
+    15% { top: 0px; transform: translateY(-120px);}
+    20% { top: -120px;}
+    35% { top: -120px; transform: translateY(-240px);}
+    40% { top: -240px;}
+    55% { top: -240px; transform: translateY(-360px);}
+    60% { top: -360px;}
+    75% { top: -360px; transform: translateY(-480px);}
+    80% { top: -480px;}
+    95% { top: -480px; transform: translateY(0px);}
+    100% { top: 0px;}
+}
+@media (max-width:479px){ /*smartphone portrait*/
+    body{        
+        font-size: 13px;
+        background-size: 100%;
+        position: relative;
+    }
+    #homebody{
+        background-image: url(../images/DSC01688s.jpg);
+    }
+    #aboutbody{
+        background-image: url(../images/DSC00575s.jpg);
+    }
+    #portbody{
+        background-image: url(../images/DSC006791s.jpg);
+    }
+    #hobbybody{
+        background-image: url(../images/DSC00642s.jpg);
+    }
+    #linkbody{
+        background-image: url(../images/DSC01613s.jpg);
+    }
+    #contactbody{
+        background-image: url(../images/DSC00584s.jpg);
+    }
+    .main{
+        margin: 1%;
+    }
+    #graph img{
+        display: none;
+    }
+    h1{
+        margin-bottom: 4px;
+        margin-top: 2em;
+        color: #903;
+        text-align: center;
+        text-shadow: -1px -1px 2px silver;
+    }
+    #menu{
+        position: fixed;
+        top: 0;
+        left: 1%;
+        width: 98%;
+    }
+    #dropdown{
+        background: grey;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        border-top: 1px solid #B0B0B0;
+        border-bottom: 1px solid #505050;
+        margin-top: 2px;
+        margin-bottom: 3px; 
+    }
+    #dropdown a{
+        font-size: 20px;
+        color: white;
+        text-decoration: none;
+        text-shadow: 2px 2px 2px black;
+        text-align: center;
+        display: inline-block;
+        width: 25%;
+    }
+    #dropdown span{
+        font-size: 20px;
+        color: white;
+        text-shadow: 2px 2px 2px black;
+        text-align: center;
+        display: inline-block;
+        float: right;
+        width: 25%;
+    }
+    #menu ul li ul{
+        display: none;        
+        padding: 0px;
+    }
+    #menu ul li:hover > ul, #menu ul li a:active #menu ul li ul{
+        display: block;        
+    }
+    #menu ul li:hover #dropdown a{
+        color: black;
+        text-shadow: none;
+    }
+    #menu ul li:hover #dropdown span{
+        color: transparent;
+        text-shadow: none;
+    }
+    #menu ul li ul li{
+        list-style-type: none;
+        margin-bottom: 3px;        
+    }
+    #menu ul li ul li:nth-of-type(1) a{
+        background: #006699;
+    }
+    #menu ul li ul li:nth-of-type(2) a{
+        background: #3399CC;
+    }
+    #menu ul li ul li:nth-of-type(3) a{
+        background: #66CCCC;
+    }
+    #menu ul li ul li:nth-of-type(4) a{
+        background: #009999;
+    }
+    #menu ul li ul li:nth-of-type(5) a{
+        background: #006666;
+    }
+    #menu ul li ul li:nth-of-type(6) a{
+        background: #336666;
+    }
+    #menu .symbol{        
+        font-size: 26px;
+        color: silver;
+        text-decoration: none;
+        text-align: center;
+        text-shadow: 2px 2px 2px black;
+        width: 25%;
+        padding-bottom: 4px;
+    }
+    #menu ul li ul li:nth-of-type(odd) .symbol{
+        float: left;
+    }
+    #menu ul li ul li:nth-of-type(odd) .word{        
+        width: 74.5%;
+        border-right: 1px solid black;
+    }
+    #menu ul li ul li:nth-of-type(even) .symbol{
+        float: right;
+        position: relative;
+        top: -20px;
+    }
+    #menu ul li ul li:nth-of-type(even) .word{
+        margin-left: 25%;
+        width: 50%;
+        border-left: 3px solid black;
+    }
+    #menu .word{
+        display: block;
+        color: silver;
+        text-decoration: none;
+        text-align: center;
+        text-shadow: 2px 2px 2px black;
+        padding-bottom: 1px;
+    }
+    #menu ul li ul .selected .word, #menu ul li ul .selected .symbol{
+        color: transparent;
+        text-shadow: 0px 0px 1px #903;
+    }
+    #menu ul li ul li a:hover{
+        color: white;
+        text-shadow: 0px 0px 2px white;
+    }    
+    aside{
+        margin: 3px 0;        
+    }
+    aside p{
+        text-align: center;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        padding-left: 7.5em;
+        padding-right: 7.5em;
+        background: #903;        
+    }   
+    aside p a{
+        display: block;
+        padding: 0em;        
+        text-decoration: none;
+        color: white;
+        text-shadow: 1px 1px 2px black;        
+    }
+    aside a:visited{
+        color: silver;
+    }
+    aside p:hover a{
+        color: white;
+        text-shadow: 0px 0px 2px white;    
+    }
+    .art{
+        width: auto;
+        border-top: 1px solid #B0B0B0;
+        border-bottom: 1px solid #505050;
+        padding: 1em 2px 2px 2px;        
+        background: grey;
+    }
+    .art h2{
+        font-family: monospace, serif;
+        font-size: 20px;
+        margin: 2px;
+        margin-bottom: 0px;        
+        border: 2px solid black;
+        border-bottom: 1px dashed black;
+        border-radius: 11px 11px 0 0;
+        padding: 0 0.5em 2px 0.5em;
+        text-align: center;
+        text-transform: capitalize;
+        color: silver;
+        text-shadow: 1px 1px 2px black;        
+    }
+    .art > h2:first-child{
+        color: whitesmoke;
+        border-radius: 11px 11px 11px 11px;
+        margin: 0 2px 13px 2px;       
+        border: 2px solid black;
+    }
+    #homeart h2{
+        background: #006699;
+    }
+    #aboutart h2{
+        background: #3399CC;
+    }
+    #portart h2{
+        background: #66CCCC;
+    }
+    #hobart h2{
+        background: #009999;
+    }
+    #linkart h2{
+        background: #006666;
+    }
+    #contart h2{
+        background: #336666;
+    }
+    .art article, .art form{
+        margin: 0 2px 13px 2px;       
+        border: 2px solid black;
+        border-top: none;
+        border-radius: 0 0 11px 11px;
+        padding: 0.5em;
+        background: silver;       
+    }
+    #aboutart article:first-of-type{
+        background-color: grey;
+    }
+    #aboutprofile{
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        padding: 4px;
+        background-image: url("../images/profiels.jpg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    dd{
+        float: right;
+        position: relative;
+        top: -1.2em;
+    }
+    #portart .projects{
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+    a[href*=Bea]{
+        display: block;
+        color: transparent;
+        text-shadow: none;
+        background-image: url("../images/boekhandelmobile.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-color: silver;
+        height: 150px;
+        border-radius: 0;
+        box-shadow: none;
+        margin-top: 1em;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    a[href*=Bea]:hover{
+        opacity: 0.5;
+        color: transparent;
+        background-color: transparent;
+        text-shadow: none;
+    }
+    a[href*=Pukkel]{
+        display: block;
+        color: transparent;
+        text-shadow: none;
+        background-image: url("../images/pukkelpopmobile.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-color: silver;
+        height: 150px;
+        border-radius: 0;
+        box-shadow: none;
+        margin-top: 1em;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    a[href*=Pukkel]:hover{
+        opacity: 0.5;
+        color: transparent;
+        background-color: transparent;
+        text-shadow: none;
+    }
+    h3{
+        color: whitesmoke;
+        text-shadow: 3px 3px 6px black;
+        text-transform: capitalize;
+        text-align: center;
+        padding: 0.5em;
+    }
+    .projects p, .projects ol{
+        padding-bottom: 1em;
+        border-bottom: 2px solid grey;
+    }
+    .projects section:last-child div p,.projects section:last-child div ol{
+        border: none;
+    }
+    .slideshow{
+        color: silver;
+        text-shadow: 1px 1px 2px black;
+        position: relative;
+        max-width: 240px;
+        height: 334px;
+        margin-top: 1em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #portret, #abstract{
+        height: 180px;
+    }
+    #staand{
+        height: 320px;
+    }
+    #dj{
+        height: 160px;
+    }
+    .slideshow img{
+        display: block;
+        position: absolute;
+        width: 100%;
+        opacity: 0; 
+        -webkit-animation: fade 36s linear infinite; 
+        -moz-animation: fade 36s linear infinite;
+        -ms-animation: fade 36s linear infinite;
+        -o-animation: fade 36s linear infinite;
+        animation: fade 36s linear infinite;
+    }
+    .slideshow .i2{
+        -webkit-animation-delay: 6s;
+        -moz-animation-delay: 6s;
+        -ms-animation-delay: 6s;
+        -o-animation-delay: 6s;
+        animation-delay: 6s;
+    }
+    .slideshow .i3{
+        -webkit-animation-delay: 12s;
+        -moz-animation-delay: 12s;
+        -ms-animation-delay: 12s;
+        -o-animation-delay: 12s;
+        animation-delay: 121s;
+    }
+    .slideshow .i4{
+        -webkit-animation-delay: 18s;
+        -moz-animation-delay: 18s;
+        -ms-animation-delay: 18s;
+        -o-animation-delay: 18s;
+        animation-delay: 18s;
+    }
+    .slideshow .i5{
+        -webkit-animation-delay: 24s;
+        -moz-animation-delay: 24s;
+        -ms-animation-delay: 24s;
+        -o-animation-delay: 24s;
+        animation-delay: 24s;
+    }
+    .slideshow .i6{
+        -webkit-animation-delay: 30s;
+        -moz-animation-delay: 30s;
+        -ms-animation-delay: 30s;
+        -o-animation-delay: 30s;
+        animation-delay: 30s;
+    }
+    #slider{
+        position: relative;
+        max-width: 240px;
+        height: 120px;
+        margin-top: 1em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #mask{
+        position: absolute;
+        max-width: 240px;
+        height: 120px;
+        overflow: hidden;
+    }
+    #mask img{
+        width: 100%;
+        -webkit-animation: slides 30s ease-in-out 2s infinite;
+        -moz-animation: slides 30s ease-in-out 2s infinite;
+        -ms-animation: slides 30s ease-in-out 2s infinite;
+        -o-animation: slides 30s ease-in-out 2s infinite;
+        animation: slides 30s ease-in-out 2s infinite;
+    }
+    #tutorial{
+        margin-bottom: 0.5em;
+    }
+    #contart form p{
+        padding: 0.5em;
+        color: black;       
+    }
+    label{
+        display: block;
+    }
+    input[type="text"], input[type="email"], textarea, select{
+        min-width: 14em;
+        width: 100%;
+        background: silver;  
+        border: 2px solid grey;
+        padding: 0.2em 1em 0.2em 1em;
+    }
+    input[type="text"]:focus, input[type="email"]:focus, textarea:focus, select:focus{
+        background: white;
+        outline: 2px 2px #CC3333;
+    }
+    input[type="submit"], input[type="reset"]{
+        background: linear-gradient(grey,silver 5%,grey);
+        background: -webkit-linear-gradient(grey,silver 5%,grey);
+        background: -moz-linear-gradient(grey,silver 5%,grey);
+        background: -ms-linear-gradient(grey,silver 5%,grey);
+        background: -o-linear-gradient(grey,silver 5%,grey);
+        background-color: grey;
+        border-top: 2px solid grey;
+        border-bottom: 2px solid #696969;
+        border-left: 2px solid grey;
+        border-right: 2px solid #696969;
+        border-radius: 2rem;
+        color: white;
+        text-shadow: 2px 2px 4px black;
+        display: inline-block;
+        min-width: 6em;
+        width: 40%;
+        margin: 0 5% 5% 5%;        
+    }
+    input[type="submit"]:focus, input[type="reset"]:focus{
+        outline: none;
+    }
+    input[type="submit"]:active, input[type="reset"]:active{       
+        text-shadow: -1px -1px 6px white;
+        box-shadow: 2px 2px 4px black inset;
+    }
+    #footnote{
+        text-align: center;
+        padding: 0px 0px 4px 0px;
+        margin: 0px 2px 0px 2px;
+    }
+    footer{
+        margin-top: 0px;
+        margin-left: 3px;
+        margin-right: 3px;
+        padding: 1em;
+        color: silver;
+        text-shadow: 1px 1px 2px black;
+        text-align: center;
+    }
+}
+@media (min-width:480px) and (max-width:799px){ /*smartphone landscape and tablet portrait*/
+    .symbol, span{
+        display: none;
+    }
+    body{
+        font-size: medium;
+        background-size: cover;        
+        background-repeat: repeat-y;
+        background-attachment: fixed;
+    }
+    #homebody{
+        background-image: url(../images/DSC01688.JPG);        
+    }
+    #aboutbody{
+        background-image: url(../images/DSC00575.JPG);
+    }
+    #portbody{
+        background-image: url(../images/DSC006791A.JPG);
+    }
+    #hobbybody{
+        background-image: url(../images/DSC00642.JPG);
+    }
+    #linkbody{
+        background-image: url(../images/DSC01613.JPG);
+    }
+    #contactbody{
+        background-image: url(../images/DSC00584.JPG);
+    }
+    .main{
+        width: 450px;
+    }    
+    #graph{
+        margin-top: 2em;
+        padding-top: 1em;
+        text-align: center;
+        background: -webkit-linear-gradient(top,silver,transparent);
+        background: -moz-linear-gradient(top,silver,transparent);
+        background: -ms-linear-gradient(top,silver,transparent);
+        background: -o-linear-gradient(top,silver,transparent);
+        background: linear-gradient(top,silver,transparent);
+        box-shadow: 3px -4px 6px black;
+        opacity: 0.75;
+        position: relative;
+    }
+    img{
+       width: 100%; 
+    }
+    h1{
+        padding: 0 16px 0 16px;
+        margin-right: auto;
+        font-size: 22px;
+        text-align: center;        
+        width: 100%;        
+        position: absolute;
+        top: 69%;
+    }
+    #menu{
+        font-size: small;
+        font-family: monospace;       
+    }
+    #menu ul li{
+        list-style-type: none;
+    }
+    #menu ul li a{
+        display: none;
+    }
+    #menu ul li ul{
+        list-style: none;
+        overflow: hidden;
+    }
+    #menu ul li ul li{
+        margin-right: 0.1em;
+        text-align: center;
+        float: left;
+        border-radius: 1em 1em 0em 0em;
+        box-shadow: 0px -3px 9px black inset;
+    }        
+    #menu ul li ul li:nth-of-type(1){
+        background: #006699;       
+    }
+    #menu ul li ul li:nth-of-type(2){
+        background: #3399CC;
+    }
+    #menu ul li ul li:nth-of-type(3){
+        background: #66CCCC;
+    }
+    #menu ul li ul li:nth-of-type(4){
+        background: #009999;
+    }
+    #menu ul li ul li:nth-of-type(5){
+        background: #006666;
+    }
+    #menu ul li ul li:nth-of-type(6){
+        background: #336666;
+        margin-right: 0em;
+    }
+    #menu .word{
+        display: block;
+        padding: 0.5em 1em 0.5em 1.276em;
+        text-decoration: none;
+        color: white;
+        text-shadow: 0px 0px 3px black;       
+    }
+    #menu .word:hover{
+        color: #660033;
+        text-shadow: 0px 0px 3px white;
+    }
+    #menu .selected{        
+        box-shadow: none;
+    }
+    #menu .selected .word{
+        color: transparent;
+        text-shadow: 0px 0px 1px silver;
+    }
+    aside{
+        width: 25%;
+        position: absolute;
+        top: 0.5em;
+        left: 0.5em;    
+    }
+    aside p{
+        text-align: center;
+        background: #660033;
+        border-radius: 1em 1em 1em 1em;
+        padding: 0.2em;
+        border: 1px solid grey;
+        box-shadow: 3px 3px 6px black;
+    }
+    aside p a{
+        display: block;
+        font-size: small;
+        font-family: monospace;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        text-shadow: 0px 0px 3px black;
+    }
+    aside p a:hover{
+        text-shadow: 0px 0px 4px white;
+    }
+    aside p:active{
+        box-shadow: 3px 3px 6px black inset;
+    }
+    .art h2{  
+        padding: 0.2em 1em 0.2em 1em;
+        font-family: monospace, serif;       
+        font-size: 24px;
+        text-transform: capitalize;
+        text-shadow: -1px -1px 4px silver;
+        text-align: center;
+        color: #660033;
+        box-shadow: 3px 3px 9px black;
+        border-radius: 24px 24px 0px 0px;
+    }
+    .art > h2:first-child{
+        color: black;
+        padding-top: 1em;
+        padding-bottom: 0.5em;
+        border: none;
+        border-radius: 0px 0px 24px 24px;
+        margin-bottom: 1em;
+    }
+    #homeart h2{
+        background: linear-gradient(top,#006699 25%,silver 75%,grey 95%);
+        background: -webkit-linear-gradient(top,#006699 25%,silver 75%,grey 95%);
+        background: -moz-linear-gradient(top,#006699 25%,silver 75%,grey 95%);
+        background: -o-linear-gradient(top,#006699 25%,silver 75%,grey 95%);
+        background: -ms-linear-gradient(top,#006699 25%,silver 75%,grey 95%);       
+    }
+    #aboutart h2{
+        background: linear-gradient(top,#3399CC 25%,silver 75%,grey 95%);
+        background: -webkit-linear-gradient(top,#3399CC 25%,silver 75%,grey 95%);
+        background: -moz-linear-gradient(top,#3399CC 25%,silver 75%,grey 95%);
+        background: -o-linear-gradient(top,#3399CC 25%,silver 75%,grey 95%);
+        background: -ms-linear-gradient(top,#3399CC 25%,silver 75%,grey 95%);       
+    }
+    #portart h2{
+        background: linear-gradient(top,#66CCCC 25%,silver 75%,grey 95%);
+        background: -webkit-linear-gradient(top,#66CCCC 25%,silver 75%,grey 95%);
+        background: -moz-linear-gradient(top,#66CCCC 25%,silver 75%,grey 95%);
+        background: -o-linear-gradient(top,#66CCCC 25%,silver 75%,grey 95%);
+        background: -ms-linear-gradient(top,#66CCCC 25%,silver 75%,grey 95%);        
+    }
+    #hobart h2{
+        background: linear-gradient(top,#009999 25%,silver 75%,grey 95%);
+        background: -webkit-linear-gradient(top,#009999 25%,silver 75%,grey 95%);
+        background: -moz-linear-gradient(top,#009999 25%,silver 75%,grey 95%);
+        background: -o-linear-gradient(top,#009999 25%,silver 75%,grey 95%);
+        background: -ms-linear-gradient(top,#009999 25%,silver 75%,grey 95%);       
+    }
+    #linkart h2{
+        background: linear-gradient(top,#006666 25%,silver 75%,grey 95%);
+        background: -webkit-linear-gradient(top,#006666 25%,silver 75%,grey 95%);
+        background: -moz-linear-gradient(top,#006666 25%,silver 75%,grey 95%);
+        background: -o-linear-gradient(top,#006666 25%,silver 75%,grey 95%);
+        background: -ms-linear-gradient(top,#006666 25%,silver 75%,grey 95%);       
+    }
+    #contart h2{
+        background: linear-gradient(top,#336666 25%,silver 75%,grey 95%);
+        background: -webkit-linear-gradient(top,#336666 25%,silver 75%,grey 95%);
+        background: -moz-linear-gradient(top,#336666 25%,silver 75%,grey 95%);
+        background: -o-linear-gradient(top,#336666 25%,silver 75%,grey 95%);
+        background: -ms-linear-gradient(top,#336666 25%,silver 75%,grey 95%);
+    }
+    .art article, .art form{
+        padding: 1em;
+        border: 2px solid dimgrey;
+        border-top: none;
+        background: silver;
+        margin-bottom: 1em;
+        border-radius: 0px 0px 24px 24px;
+        box-shadow: 3px 3px 9px black;
+        width: 100%;
+    }
+    #profile{
+        background-image: url(../images/DSC06804m.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: dimgrey;
+        width: 50%;
+        height: 157px;
+        border: 2px solid silver;
+        border-right: none;
+        border-radius: 0px 0px 0px 1em;;
+        box-shadow: 3px -3px 9px black inset;
+    }
+    #aboutprofile{
+        background: silver;
+        padding: 0.5em 1em;
+        border-radius: 0px 0px 1em 0px;
+        display: block;
+        margin-left: 50%;
+        float: right;
+        height: 157px;
+    } 
+    dt{
+        float: left;
+    }
+    dd{
+        display: inline-block;
+        float: right;
+    }
+    #portart .projects{
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+    a[href*=Bea]{
+        display: block;
+        color: transparent;
+        text-shadow: none;
+        background-image: url("../images/boekhandel.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 360px;
+        height: 250px;
+        border-radius: 0;
+        box-shadow: 3px 3px 9px black inset;
+        margin-top: 1em;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    a[href*=Bea]:hover{
+        opacity: 0.5;
+        color: transparent;
+        text-shadow: none;
+        box-shadow: 4px 4px 10px black;
+    }
+    a[href*=Pukkel]{
+        display: block;
+        color: transparent;
+        text-shadow: none;
+        background-image: url("../images/pukkelpop.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 360px;
+        height: 250px;
+        border-radius: 0;
+        box-shadow: 3px 3px 9px black inset;
+        margin-top: 1em;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    a[href*=Pukkel]:hover{
+        opacity: 0.5;
+        color: transparent;
+        text-shadow: none;
+        box-shadow: 4px 4px 10px black;
+    }
+    h3{
+        color: whitesmoke;
+        text-shadow: 3px 3px 6px black;
+        text-transform: capitalize;
+        text-align: center;
+        padding: 0.5em;
+    }
+    .projects p, .projects ol{
+        padding-bottom: 1em;
+        border-bottom: 2px solid grey;
+    }
+    .projects section:last-child div p,.projects section:last-child div ol{
+        border: none;
+    }
+    .slideshow{
+        color: silver;
+        text-shadow: 1px 1px 2px black;
+        position: relative;
+        width: 360px;
+        height: 504px;
+        box-shadow: 3px 3px 9px black inset;
+        margin-top: 1em;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    #portret, #abstract{
+        height: 270px;
+    }
+    #staand{
+        height: 480px;
+    }
+    #dj{
+        height: 240px;
+    }
+    .slideshow img{
+        position: absolute;
+        opacity: 0; 
+        -webkit-animation: fade 36s linear infinite; 
+        -moz-animation: fade 36s linear infinite;
+        -ms-animation: fade 36s linear infinite;
+        -o-animation: fade 36s linear infinite;
+        animation: fade 36s linear infinite;
+    }
+    .slideshow .i2{
+        -webkit-animation-delay: 6s;
+        -moz-animation-delay: 6s;
+        -ms-animation-delay: 6s;
+        -o-animation-delay: 6s;
+        animation-delay: 6s;
+    }
+    .slideshow .i3{
+        -webkit-animation-delay: 12s;
+        -moz-animation-delay: 12s;
+        -ms-animation-delay: 12s;
+        -o-animation-delay: 12s;
+        animation-delay: 121s;
+    }
+    .slideshow .i4{
+        -webkit-animation-delay: 18s;
+        -moz-animation-delay: 18s;
+        -ms-animation-delay: 18s;
+        -o-animation-delay: 18s;
+        animation-delay: 18s;
+    }
+    .slideshow .i5{
+        -webkit-animation-delay: 24s;
+        -moz-animation-delay: 24s;
+        -ms-animation-delay: 24s;
+        -o-animation-delay: 24s;
+        animation-delay: 24s;
+    }
+    .slideshow .i6{
+        -webkit-animation-delay: 30s;
+        -moz-animation-delay: 30s;
+        -ms-animation-delay: 30s;
+        -o-animation-delay: 30s;
+        animation-delay: 30s;
+    }
+    #slider{
+        width: 360px;
+        height: 180px;
+        box-shadow: 3px 3px 9px black;
+        margin-top: 1em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #mask{
+        position: absolute;
+        height: 180px;
+        overflow: hidden;
+    }
+    #mask img{
+        -webkit-animation: slide 30s ease-in-out 2s infinite;
+        -moz-animation: slide 30s ease-in-out 2s infinite;
+        -ms-animation: slide 30s ease-in-out 2s infinite;
+        -o-animation: slide 30s ease-in-out 2s infinite;
+        animation: slide 30s ease-in-out 2s infinite;
+    }
+    #tutorial{
+        margin-bottom: 0.5em;
+    }
+    #contart form{
+        background: transparent;
+        color: whitesmoke;
+        text-shadow: 2px 2px 2px black;
+    }
+    #contart form p:last-of-type{
+        text-align: center;
+    }
+    #contart form p{
+        padding-bottom: 1em;
+        padding-top: 1em;
+    }
+    label{
+        display: inline-block;
+        width: 23%;
+        text-align: right;
+        padding-bottom: 0.3em;
+    }
+    input, textarea, select{
+        background: silver;
+        padding: 0.2em 1em 0.2em 1em;
+        border: 2px solid grey;
+        box-shadow: 3px 3px 9px black;
+    }
+    input, select{
+        border-radius: 16px;
+    }
+    input[type="text"], input[type="email"], select{
+        width: 75%;
+    }
+    textarea{
+        width: 100%;        
+    }
+    input:focus, textarea:focus, select:focus{
+        outline: none;
+    }    
+    input[type="text"]:focus, input[type="email"]:focus, textarea:focus, select:focus{
+        background: white;
+        box-shadow: 0px 0px 10px white;
+    }
+    input[type="submit"], input[type="reset"]{
+        margin: 1em 2em 0em 2em;
+        background: linear-gradient(silver,grey,black);
+        background: -webkit-linear-gradient(silver,grey,black);
+        background: -moz-linear-gradient(silver,grey,black);
+        background: -ms-linear-gradient(silver,grey,black);
+        background: -o-linear-gradient(silver,grey,black);
+        border-top: 2px solid grey;
+        border-bottom: 2px solid #696969;
+        border-left: 2px solid grey;
+        border-right: 2px solid #696969;
+        color: white;
+        text-shadow: 1px 1px 2px black;
+        width: 25%;
+        margin: 0 12.5%
+    }
+    input[type="submit"]:active, input[type="reset"]:active{        
+        box-shadow: 3px 3px 6px black inset;
+        text-shadow: -1px -1px 4px white;
+    }
+    footer{
+        clear: left;
+        padding: 1em;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        opacity: 0.7;
+    }
+    .copy{
+        float: right;
+    }
+}
+@media (min-width:800px) and (max-width:1023px){ /*tablet landscape and netbook*/
+    .symbol, span{
+        display: none;
+    }
+    body{
+        font-size: medium;
+        background-size: cover;        
+        background-repeat: repeat-y;
+        background-attachment: fixed;
+    }
+    #homebody{
+        background-image: url(../images/DSC01688.JPG);        
+    }
+    #aboutbody{
+        background-image: url(../images/DSC00575.JPG);
+    }
+    #portbody{
+        background-image: url(../images/DSC006791A.JPG);        
+    }
+    #hobbybody{
+        background-image: url(../images/DSC00642.JPG);        
+    }
+    #linkbody{
+        background-image: url(../images/DSC01613.JPG);        
+    }
+    #contactbody{
+        background-image: url(../images/DSC00584.JPG);        
+    }
+    #graph{
+        text-align: center;
+        background: -webkit-linear-gradient(left,transparent,silver,transparent);
+        background: -moz-linear-gradient(left,transparent,silver,transparent);
+        background: -ms-linear-gradient(left,transparent,silver,transparent);
+        background: -o-linear-gradient(left,transparent,silver,transparent);
+        background: linear-gradient(left,transparent,silver,transparent);
+        box-shadow: 6px 6px 10px black;
+        opacity: 0.75;
+        margin-top: 1em;
+        margin-bottom: 2em;
+    }
+    h1{
+        text-align: center;        
+        width: 80%;
+        margin-left: 20%;
+        position: absolute;
+        float: right;
+        top: 128px;
+    }
+    .main{
+        width: 780px;
+    }    
+    #menu{
+        width: 156px;
+        float: left;
+        position: fixed;
+    }
+    #menu ul li{
+        list-style-type: none;
+    }
+    #dropdown{
+        display: none;
+    }
+    #menu ul li ul{
+        overflow: visible;
+    }
+    #menu ul li ul li{
+        text-align: center;        
+        border-radius: 2rem 2rem 2rem 2rem;
+        background-clip: border-box;
+        margin-bottom: 2em;
+        margin-right: 1em;
+        border-top: 2px solid grey;
+        border-bottom: 2px solid #696969;
+        border-left: 2px solid grey;
+        border-right: 2px solid #696969;
+        box-shadow: 6px 6px 10px black;
+    }
+    #menu ul li ul li:nth-of-type(1){
+        background: -webkit-linear-gradient(silver,#006699,black);
+        background: -moz-linear-gradient(silver,#006699,black);
+        background: -ms-linear-gradient(silver,#006699,black);
+        background: -o-linear-gradient(silver,#006699,black);
+        background: linear-gradient(silver,#006699,black);
+    }
+    #menu .selected:nth-of-type(1){
+        background: #006699;
+    }
+    #menu ul li ul li:nth-of-type(2){
+        background: -webkit-linear-gradient(silver,#3399CC,black);
+        background: -moz-linear-gradient(silver,#3399CC,black);
+        background: -ms-linear-gradient(silver,#3399CC,black);
+        background: -o-linear-gradient(silver,#3399CC,black);
+        background: linear-gradient(silver,#3399CC,black);
+    }
+    #menu .selected:nth-of-type(2){
+        background: #3399CC;
+    }
+    #menu ul li ul li:nth-of-type(3){
+        background: -webkit-linear-gradient(silver,#66CCCC,black);
+        background: -moz-linear-gradient(silver,#66CCCC,black);
+        background: -ms-linear-gradient(silver,#66CCCC,black);
+        background: -o-linear-gradient(silver,#66CCCC,black);
+        background: linear-gradient(silver,#66CCCC,black);
+    }
+    #menu .selected:nth-of-type(3){
+        background: #66CCCC;
+    }
+    #menu ul li ul li:nth-of-type(4){
+        background: -webkit-linear-gradient(silver,#009999,black);
+        background: -moz-linear-gradient(silver,#009999,black);
+        background: -ms-linear-gradient(silver,#009999,black);
+        background: -o-linear-gradient(silver,#009999,black);
+        background: linear-gradient(silver,#009999,black);
+    }
+    #menu .selected:nth-of-type(4){
+        background: #009999;
+    }
+    #menu ul li ul li:nth-of-type(5){
+        background: -webkit-linear-gradient(silver,#006666,black);
+        background: -moz-linear-gradient(silver,#006666,black);
+        background: -ms-linear-gradient(silver,#006666,black);
+        background: -o-linear-gradient(silver,#006666,black);
+        background: linear-gradient(silver,#006666,black);
+    }
+    #menu .selected:nth-of-type(5){
+        background: #006666;
+    }
+    #menu ul li ul li:nth-of-type(6){
+        background: -webkit-linear-gradient(silver,#336666,black);
+        background: -moz-linear-gradient(silver,#336666,black);
+        background: -ms-linear-gradient(silver,#336666,black);
+        background: -o-linear-gradient(silver,#336666,black);
+        background: linear-gradient(silver,#336666,black);
+    }
+    #menu .selected:nth-of-type(6){
+        background: #336666;
+    }
+    #menu .word{
+        display: block;
+        padding: 0.5em 1em 0.5em 1em;        
+        text-decoration: none;
+        color: silver;
+        text-shadow: 1px 1px 2px black;
+    }
+    #menu .selected{
+        border-radius: 2rem 0rem 0rem 2rem;
+        margin-right: -2px;
+        margin-left: 2em;
+        border-right: none;
+        box-shadow: none;
+    }
+    #menu .selected .word{
+        color: white;
+        padding-right: 0em;
+    }
+    #menu ul li ul li:hover .word{
+        color: white;
+        text-shadow: -1px -1px 6px white;
+    }
+    #menu ul li ul li:active{
+        box-shadow: 6px 6px 10px black inset;
+    }
+    .art{
+        min-height: 450px;
+        margin-left: 20%;
+        padding: 1rem;
+        border-top: 2px solid grey;
+        border-bottom: 2px solid #696969;
+        border-left: 2px solid grey;
+        border-right: 2px solid #696969;
+        box-shadow: 4px 4px 12px black;
+    }
+    #homeart{        
+        background: linear-gradient(left,#006699,transparent 90%);
+        background: -webkit-linear-gradient(left,#006699,transparent 90%);
+        background: -moz-linear-gradient(left,#006699,transparent 90%);
+        background: -ms-linear-gradient(left,#006699,transparent 90%);
+        background: -o-linear-gradient(left,#006699,transparent 90%);        
+    }
+    #aboutart{       
+        background: linear-gradient(left,#3399CC,transparent 90%);
+        background: -webkit-linear-gradient(left,#3399CC,transparent 90%);
+        background: -moz-linear-gradient(left,#3399CC,transparent 90%);
+        background: -ms-linear-gradient(left,#3399CC,transparent 90%);
+        background: -o-linear-gradient(left,#3399CC,transparent 90%);
+    }
+    #portart{
+        background: linear-gradient(left,#66CCCC,transparent 90%);
+        background: -webkit-linear-gradient(left,#66CCCC,transparent 90%);
+        background: -moz-linear-gradient(left,#66CCCC,transparent 90%);
+        background: -ms-linear-gradient(left,#66CCCC,transparent 90%);
+        background: -o-linear-gradient(left,#66CCCC,transparent 90%);
+    }
+    #hobart{
+        background: linear-gradient(left,#009999,transparent 90%);
+        background: -webkit-linear-gradient(left,#009999,transparent 90%);
+        background: -moz-linear-gradient(left,#009999,transparent 90%);
+        background: -ms-linear-gradient(left,#009999,transparent 90%);
+        background: -o-linear-gradient(left,#009999,transparent 90%);
+    }
+    #linkart{
+        background: linear-gradient(left,#006666,transparent 90%);
+        background: -webkit-linear-gradient(left,#006666,transparent 90%);
+        background: -moz-linear-gradient(left,#006666,transparent 90%);
+        background: -ms-linear-gradient(left,#006666,transparent 90%);
+        background: -o-linear-gradient(left,#006666,transparent 90%);
+    }
+    #contart{
+        background: linear-gradient(left,#336666,transparent 90%);
+        background: -webkit-linear-gradient(left,#336666,transparent 90%);
+        background: -moz-linear-gradient(left,#336666,transparent 90%);
+        background: -ms-linear-gradient(left,#336666,transparent 90%);
+        background: -o-linear-gradient(left,#336666,transparent 90%);
+    }
+    .art h2{
+        font-family: monospace, serif;
+        font-size: 27px;
+        background: -webkit-linear-gradient(grey,silver,grey 80%);
+        background: -moz-linear-gradient(grey,silver,grey 80%);
+        background: -ms-linear-gradient(grey,silver,grey 80%);
+        background: -o-linear-gradient(grey,silver,grey 80%);
+        background: linear-gradient(grey,silver,grey 80%);
+        text-align: center;
+        text-transform: capitalize;        
+        text-shadow: -1px -1px 2px silver;
+        color: #660022;
+        margin-top: 20px;
+        padding: 0.3rem 1rem 0.3rem 1rem;
+        border-radius: 2rem 2rem 0rem 0rem;
+    }
+    .art > h2:first-child{        
+        color: black;
+        border-top: 2px solid dimgrey;
+        border-bottom: 2px solid dimgrey;
+        border-radius: 2rem 2rem 2rem 2rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+    .art article, form{        
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border-top: none;
+        border: 2px solid grey;
+        border-radius: 0rem 0rem 2rem 2rem;
+        background: silver;
+        box-shadow: 4px 4px 10px black inset;
+        position: relative;
+        width: 100%;
+    }
+    #profile{
+        background-image: url(../images/DSC06804m.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: whitesmoke;
+        width: 50%;
+        height: 209px;
+        border: 4px solid whitesmoke;
+        box-shadow: 3px 3px 9px black;
+        margin: 4%;
+        margin-top: 3%;
+    }
+    #aboutprofile{
+        background: silver;
+        width: 40%;
+        margin-top: 3%;
+        margin-left: 56%;
+        float: right;
+        height: 209px;
+        position: absolute;
+    }
+    dt{
+        color: whitesmoke;
+        text-shadow: 3px 3px 6px black;
+        text-transform: capitalize;
+    }
+    dd{
+        text-indent: 1.5em;
+        display: inline-block;
+    }
+    #portart .projects{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .projects section{
+        position: relative;
+    }
+    h3{
+        color: whitesmoke;
+        text-shadow: 3px 3px 6px black;
+        text-transform: capitalize;
+        padding-left: 1em;
+        width: 35%;
+        float: right;
+        position: absolute;
+        top: 0px;
+        left: 360px;
+    }
+    #meer{
+        display: none;
+    }
+    .projects p, .projects ol{
+        padding-top: 1em;
+        padding-bottom: 1em;
+        border-bottom: 2px solid grey;
+    }
+    .projects section:last-child div p,.projects section:last-child div ol{
+        border: none;
+    }
+     a[href*=Bea]{
+        display: block;
+        color: transparent;
+        text-shadow: none;
+        background-image: url("../images/boekhandel.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 360px;
+        height: 250px;
+        border-radius: 0;        
+        box-shadow: 4px 4px 10px black;
+        margin-top: 1em;
+        margin-right: auto;
+    }
+    a[href*=Bea]:hover{
+        opacity: 0.5;
+        color: transparent;
+        text-shadow: none;
+        box-shadow: 4px 4px 10px black;
+    }
+    a[href*=Pukkel]{
+        display: block;
+        color: transparent;
+        text-shadow: none;
+        background-image: url("../images/pukkelpop.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 360px;
+        height: 250px;
+        border-radius: 0;
+        box-shadow: 4px 4px 10px black;
+        margin-top: 1em;
+        margin-right: auto;
+    }
+    a[href*=Pukkel]:hover{
+        opacity: 0.5;
+        color: transparent;
+        text-shadow: none;
+        box-shadow: 4px 4px 10px black;
+    }
+    .slideshow{
+        color: silver;
+        text-shadow: 1px 1px 2px black;
+        position: relative;
+        width: 360px;
+        height: 504px;
+        box-shadow: 4px 4px 10px black;
+        margin-top: 1em;
+        margin-right: auto;
+    }
+    #portret, #abstract{
+        height: 270px;
+    }
+    #staand{
+        height: 480px;
+    }
+    #dj{
+        height: 240px;
+    }
+    .slideshow img{
+        position: absolute;
+        opacity: 0; 
+        -webkit-animation: fade 36s linear infinite; 
+        -moz-animation: fade 36s linear infinite;
+        -ms-animation: fade 36s linear infinite;
+        -o-animation: fade 36s linear infinite;
+        animation: fade 36s linear infinite;
+    }
+    .slideshow .i2{
+        -webkit-animation-delay: 6s;
+        -moz-animation-delay: 6s;
+        -ms-animation-delay: 6s;
+        -o-animation-delay: 6s;
+        animation-delay: 6s;
+    }
+    .slideshow .i3{
+        -webkit-animation-delay: 12s;
+        -moz-animation-delay: 12s;
+        -ms-animation-delay: 12s;
+        -o-animation-delay: 12s;
+        animation-delay: 121s;
+    }
+    .slideshow .i4{
+        -webkit-animation-delay: 18s;
+        -moz-animation-delay: 18s;
+        -ms-animation-delay: 18s;
+        -o-animation-delay: 18s;
+        animation-delay: 18s;
+    }
+    .slideshow .i5{
+        -webkit-animation-delay: 24s;
+        -moz-animation-delay: 24s;
+        -ms-animation-delay: 24s;
+        -o-animation-delay: 24s;
+        animation-delay: 24s;
+    }
+    .slideshow .i6{
+        -webkit-animation-delay: 30s;
+        -moz-animation-delay: 30s;
+        -ms-animation-delay: 30s;
+        -o-animation-delay: 30s;
+        animation-delay: 30s;
+    }
+    #slider{
+        width: 360px;
+        height: 180px;
+        box-shadow: 4px 4px 10px black;
+        margin-top: 1em;
+        margin-right: auto;
+    }
+    #mask{
+        position: absolute;
+        height: 180px;
+        overflow: hidden;
+    }
+    #mask img{
+        -webkit-animation: slide 30s ease-in-out 2s infinite;
+        -moz-animation: slide 30s ease-in-out 2s infinite;
+        -ms-animation: slide 30s ease-in-out 2s infinite;
+        -o-animation: slide 30s ease-in-out 2s infinite;
+        animation: slide 30s ease-in-out 2s infinite;
+    }
+    .art .linklist{
+        padding: 0;
+        box-shadow: none;
+    }
+    .linklist p{
+        padding: 1em;
+        box-shadow: 4px 4px 10px black inset;
+    }
+    .linklist ul{
+        background-clip: padding-box;
+        border-radius: 0rem 0rem 2rem 2rem;
+        border: none;
+        list-style: none;
+        padding: 0;
+    }
+    .linklist ul li a{
+        padding: 0.5em 0 0.3em 0;
+        border-top: 10px solid grey;
+        border-radius: 0;
+        box-shadow: 4px 4px 10px black inset;
+    }
+    .linklist ul li:last-child a{
+        border-radius: 0rem 0rem 2rem 2rem;
+        padding-bottom: 1em;
+    }
+    #tutorial{
+        color: whitesmoke;
+        text-shadow: 1px 1px 2px black;
+        background-color: dimgrey;
+        background-clip: padding-box;
+        padding: 0;
+        border-top: 10px solid grey;
+        border-bottom: 10px solid grey;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+    }
+    #tutorial a{
+        padding: 1em;
+        border-radius: 0;
+        box-shadow: 4px 4px 10px black inset;
+    }
+    #contart form{
+        background: transparent;
+        color: whitesmoke;
+        text-shadow: 2px 2px 2px black;
+    }
+    #contart form p:last-of-type{
+        text-align: center;
+    }
+    #contart form p{
+        padding: 1em;
+    }
+    label{
+        display: inline-block;
+        width: 24%;
+        text-align: right;
+        padding-bottom: 0.3em;
+    }
+    input, textarea, select{
+        background: silver;
+        padding: 0.2em 1em 0.2em 1em;
+        border: 2px solid grey;
+        box-shadow: 3px 3px 9px black;
+    }
+    input, select{
+        border-radius: 16px;
+    }
+    input[type="text"], input[type="email"], select{
+        width: 75%;
+    }
+    textarea{
+        width: 100%;        
+    }
+    input:focus, textarea:focus, select:focus{
+        outline: none;
+    }    
+    input[type="text"]:focus, input[type="email"]:focus, textarea:focus, select:focus{
+        background: white;
+        box-shadow: 0px 0px 10px white;
+    }
+    input[type="submit"], input[type="reset"]{
+        margin: 1em 2em 0em 2em;
+        background: linear-gradient(silver,grey,black);
+        background: -webkit-linear-gradient(silver,grey,black);
+        background: -moz-linear-gradient(silver,grey,black);
+        background: -ms-linear-gradient(silver,grey,black);
+        background: -o-linear-gradient(silver,grey,black);
+        border-top: 2px solid grey;
+        border-bottom: 2px solid #696969;
+        border-left: 2px solid grey;
+        border-right: 2px solid #696969;
+        font-size: 16px;
+        color: whitesmoke;
+        text-shadow: 2px 2px 2px black;
+        width: 25%;
+        margin: 0 12.5%
+    }
+    input[type="submit"]:active, input[type="reset"]:active{        
+        box-shadow: 3px 3px 6px black inset;
+        text-shadow: -1px -1px 4px white;
+    }
+    aside{
+        position: fixed;
+        top: 650px;
+        width: 156px;
+        float: left;
+        clear: left;
+    }
+    aside p{
+        text-align: center;        
+        border-radius: 2rem 2rem 2rem 2rem;
+        margin-bottom: 2em;
+        margin-right: 1em;
+        border-top: 2px solid grey;
+        border-bottom: 2px solid #696969;
+        border-left: 2px solid grey;
+        border-right: 2px solid #696969;
+        box-shadow: 6px 6px 10px black;
+        background: -webkit-linear-gradient(silver,#602,black);
+        background: -moz-linear-gradient(silver,#602,black);
+        background: -ms-linear-gradient(silver,#602,black);
+        background: -o-linear-gradient(silver,#602,black);
+        background: linear-gradient(silver,#602,black);
+    }
+    aside p a{
+        display: block;
+        padding: 0.5em 1em 0.5em 1em;        
+        text-decoration: none;
+        color: silver;
+        text-shadow: 1px 1px 2px black;
+    }
+    aside p:hover a{
+        color: white;
+        text-shadow: -1px -1px 6px white;
+    }
+    aside p:active{
+        box-shadow: 6px 6px 10px black inset;
+    }
+    footer{
+        clear: left;
+        padding: 1em;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        opacity: 0.5;
+    }
+    .copy{
+        float: right;
+    }
+}
+@media (min-width:800px) and (max-height:799px){ /*netbook*/
+    #menu, aside{
+        position: static;
+    }
+}
+@media (min-width:1024px) and (max-height:799px){ /*netbook*/
+    .symbol, span{
+        display: none;
+    }
+    body{
+        font-size: large;
+        background-size: 100%;       
+        background-repeat: repeat-y;
+        background-attachment: fixed;
+    }
+    #homebody{
+        background-image: url(../images/DSC01688.JPG);        
+    }
+    #aboutbody{
+        background-image: url(../images/DSC00575.JPG);
+    }
+    #portbody{
+        background-image: url(../images/DSC006791A.JPG);        
+    }
+    #hobbybody{
+        background-image: url(../images/DSC00642.JPG);        
+    }
+    #linkbody{
+        background-image: url(../images/DSC01613.JPG);        
+    }
+    #contactbody{
+        background-image: url(../images/DSC00584.JPG);        
+    }
+    #graph{
+        text-align: center;
+        background: -webkit-linear-gradient(left,transparent,silver,transparent);
+        background: -moz-linear-gradient(left,transparent,silver,transparent);
+        background: -ms-linear-gradient(left,transparent,silver,transparent);
+        background: -o-linear-gradient(left,transparent,silver,transparent);
+        background: linear-gradient(left,transparent,silver,transparent);
+        box-shadow: 6px 6px 10px black;
+        opacity: 0.75;
+        margin-top: 1em;
+        margin-bottom: 2em;
+    }
+    h1{
+        text-align: center;        
+        width: 80%;
+        margin-left: 20%;
+        position: absolute;
+        float: right;
+        top: 124px;
+    }
+    .main{
+        min-width: 1000px;
+        width: 70%;
+    }    
+    #menu{
+        min-width: 200px;
+        width: 14%;
+        float: left;
+    }
+    #menu ul li{
+        list-style-type: none;
+    }
+    #dropdown{
+        display: none;
+    }
+    #menu ul li ul{
+        overflow: visible;
+    }
+    #menu ul li ul li{
+        text-align: center;        
+        border-radius: 2rem 2rem 2rem 2rem;
+        background-clip: border-box;
+        margin-bottom: 2em;
+        margin-right: 1em;
+        border-top: 2px solid grey;
+        border-bottom: 2px solid #696969;
+        border-left: 2px solid grey;
+        border-right: 2px solid #696969;
+        box-shadow: 6px 6px 10px black;
+    }
+    #menu ul li ul li:nth-of-type(1){
+        background: -webkit-linear-gradient(silver,#006699,black);
+        background: -moz-linear-gradient(silver,#006699,black);
+        background: -ms-linear-gradient(silver,#006699,black);
+        background: -o-linear-gradient(silver,#006699,black);
+        background: linear-gradient(silver,#006699,black);
+    }
+    #menu .selected:nth-of-type(1){
+        background: #006699;
+    }
+    #menu ul li ul li:nth-of-type(2){
+        background: -webkit-linear-gradient(silver,#3399CC,black);
+        background: -moz-linear-gradient(silver,#3399CC,black);
+        background: -ms-linear-gradient(silver,#3399CC,black);
+        background: -o-linear-gradient(silver,#3399CC,black);
+        background: linear-gradient(silver,#3399CC,black);
+    }
+    #menu .selected:nth-of-type(2){
+        background: #3399CC;
+    }
+    #menu ul li ul li:nth-of-type(3){
+        background: -webkit-linear-gradient(silver,#66CCCC,black);
+        background: -moz-linear-gradient(silver,#66CCCC,black);
+        background: -ms-linear-gradient(silver,#66CCCC,black);
+        background: -o-linear-gradient(silver,#66CCCC,black);
+        background: linear-gradient(silver,#66CCCC,black);
+    }
+    #menu .selected:nth-of-type(3){
+        background: #66CCCC;
+    }
+    #menu ul li ul li:nth-of-type(4){
+        background: -webkit-linear-gradient(silver,#009999,black);
+        background: -moz-linear-gradient(silver,#009999,black);
+        background: -ms-linear-gradient(silver,#009999,black);
+        background: -o-linear-gradient(silver,#009999,black);
+        background: linear-gradient(silver,#009999,black);
+    }
+    #menu .selected:nth-of-type(4){
+        background: #009999;
+    }
+    #menu ul li ul li:nth-of-type(5){
+        background: -webkit-linear-gradient(silver,#006666,black);
+        background: -moz-linear-gradient(silver,#006666,black);
+        background: -ms-linear-gradient(silver,#006666,black);
+        background: -o-linear-gradient(silver,#006666,black);
+        background: linear-gradient(silver,#006666,black);
+    }
+    #menu .selected:nth-of-type(5){
+        background: #006666;
+    }
+    #menu ul li ul li:nth-of-type(6){
+        background: -webkit-linear-gradient(silver,#336666,black);
+        background: -moz-linear-gradient(silver,#336666,black);
+        background: -ms-linear-gradient(silver,#336666,black);
+        background: -o-linear-gradient(silver,#336666,black);
+        background: linear-gradient(silver,#336666,black);
+    }
+    #menu .selected:nth-of-type(6){
+        background: #336666;
+    }
+    #menu .word{
+        display: block;
+        padding: 0.5em 1em 0.5em 1em;        
+        text-decoration: none;
+        color: silver;
+        text-shadow: 1px 1px 2px black;
+    }
+    #menu .selected{
+        border-radius: 2rem 0rem 0rem 2rem;
+        margin-right: -0.15rem;
+        margin-left: 2em;
+        border-right: none;
+        box-shadow: none;
+    }
+    #menu .selected .word{
+        color: white;
+        padding-right: 0em;
+    }
+    #menu ul li ul li:hover .word{
+        color: white;
+        text-shadow: -1px -1px 6px white;
+    }
+    #menu ul li ul li:active{
+        box-shadow: 6px 6px 10px black inset;
+    }
+    .art{
+        min-height: 450px;
+        margin-left: 20%;
+        padding: 1em;
+        border-top: 2px solid grey;
+        border-bottom: 2px solid #696969;
+        border-left: 2px solid grey;
+        border-right: 2px solid #696969;
+        box-shadow: 4px 4px 12px black;
+    }
+    #homeart{
+        background: linear-gradient(left,#006699,transparent 90%);
+        background: -webkit-linear-gradient(left,#006699,transparent 90%);
+        background: -moz-linear-gradient(left,#006699,transparent 90%);
+        background: -ms-linear-gradient(left,#006699,transparent 90%);
+        background: -o-linear-gradient(left,#006699,transparent 90%);
+    }
+    #aboutart{
+        background: linear-gradient(left,#3399CC,transparent 90%);
+        background: -webkit-linear-gradient(left,#3399CC,transparent 90%);
+        background: -moz-linear-gradient(left,#3399CC,transparent 90%);
+        background: -ms-linear-gradient(left,#3399CC,transparent 90%);
+        background: -o-linear-gradient(left,#3399CC,transparent 90%);
+    }
+    #portart{
+        background: linear-gradient(left,#66CCCC,transparent 90%);
+        background: -webkit-linear-gradient(left,#66CCCC,transparent 90%);
+        background: -moz-linear-gradient(left,#66CCCC,transparent 90%);
+        background: -ms-linear-gradient(left,#66CCCC,transparent 90%);
+        background: -o-linear-gradient(left,#66CCCC,transparent 90%);
+    }
+    #hobart{
+        background: linear-gradient(left,#009999,transparent 90%);
+        background: -webkit-linear-gradient(left,#009999,transparent 90%);
+        background: -moz-linear-gradient(left,#009999,transparent 90%);
+        background: -ms-linear-gradient(left,#009999,transparent 90%);
+        background: -o-linear-gradient(left,#009999,transparent 90%);
+    }
+    #linkart{
+        background: linear-gradient(left,#006666,transparent 90%);
+        background: -webkit-linear-gradient(left,#006666,transparent 90%);
+        background: -moz-linear-gradient(left,#006666,transparent 90%);
+        background: -ms-linear-gradient(left,#006666,transparent 90%);
+        background: -o-linear-gradient(left,#006666,transparent 90%);
+    }
+    #contart{
+        background: linear-gradient(left,#336666,transparent 90%);
+        background: -webkit-linear-gradient(left,#336666,transparent 90%);
+        background: -moz-linear-gradient(left,#336666,transparent 90%);
+        background: -ms-linear-gradient(left,#336666,transparent 90%);
+        background: -o-linear-gradient(left,#336666,transparent 90%);
+    }
+    h2{
+        font-family: monospace, serif;
+        font-size: 27px;
+        background: -webkit-linear-gradient(grey,silver,grey 80%);
+        background: -moz-linear-gradient(grey,silver,grey 80%);
+        background: -ms-linear-gradient(grey,silver,grey 80%);
+        background: -o-linear-gradient(grey,silver,grey 80%);
+        background: linear-gradient(grey,silver,grey 80%);
+        text-align: center;
+        text-transform: capitalize;        
+        text-shadow: -1px -1px 2px silver;
+        color: #660022;
+        margin-top: 20px;
+        padding: 0.25em 1em 0.25em 1em;
+        border-radius: 2rem 2rem 0rem 0rem;
+    }
+    .art > h2:first-child{
+        color: black;
+        border-top: 2px solid dimgrey;
+        border-bottom: 2px solid dimgrey;
+        border-radius: 2rem 2rem 2rem 2rem;
+        margin-bottom: 2rem;
+    }
+    .art article, form{        
+        margin-bottom: 2em;
+        padding: 1em;
+        border-top: 0px solid grey;
+        border: 2px solid grey;
+        border-radius: 0rem 0rem 2rem 2rem;
+        background: silver;
+        box-shadow: 4px 4px 10px black inset;
+        position: relative;
+        width: 100%;
+    }
+    #profile{
+        background-image: url(../images/DSC06804m.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: whitesmoke;
+        width: 70%;
+        height: 390px;
+        border: 24px solid whitesmoke;
+        box-shadow: 4px 4px 10px black;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    #aboutprofile{
+        line-height: 1.8;
+        display: inline-block;
+        width: 30%;
+        margin-left: 69%;
+        margin-top: 6%;
+        float: right;
+        padding-right: 1em;
+        position: absolute;
+    }
+    dt{
+        color: whitesmoke;
+        text-shadow: 3px 3px 6px black;
+        text-transform: capitalize;
+    }
+    dd{
+        text-indent: 1em;
+    }
+    .projects{
+        display: table;
+    }
+    .projects section{
+        display: table-row;
+    }
+    .projects section > div{
+        display: table-cell;
+        padding: 0.5em 0 0.5em 1em;
+    }
+    h3{
+        color: whitesmoke;
+        text-shadow: 3px 3px 6px black;
+        text-transform: capitalize;
+        padding-bottom: 0.5em;
+    }
+    a[href*=Bea]{
+        display: block;
+        color: transparent;
+        text-shadow: none;
+        background-image: url("../images/boekhandel.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 360px;
+        height: 250px;
+        border-radius: 0;
+        box-shadow: 4px 4px 10px black;        
+    }
+    a[href*=Bea]:hover{
+        opacity: 0.5;
+        color: transparent;
+        text-shadow: none;
+        box-shadow: 4px 4px 10px black;
+    }
+    a[href*=Pukkel]{
+        display: block;
+        color: transparent;
+        text-shadow: none;
+        background-image: url("../images/pukkelpop.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 360px;
+        height: 250px;
+        border-radius: 0;
+        box-shadow: 4px 4px 10px black;    
+    }
+    a[href*=Pukkel]:hover{
+        opacity: 0.5;
+        color: transparent;
+        text-shadow: none;
+        box-shadow: 4px 4px 10px black;
+    }
+    .slideshow{
+        color: silver;
+        text-shadow: 1px 1px 2px black;
+        position: relative;
+        width: 360px;
+        height: 504px;
+        box-shadow: 4px 4px 10px black;
+    }
+    #portret, #abstract{
+        height: 270px;
+    }
+    #staand{
+        height: 480px;
+    }
+    #dj{
+        height: 240px;
+    }
+    .slideshow img{
+        position: absolute;
+        opacity: 0; 
+        -webkit-animation: fade 36s linear infinite; 
+        -moz-animation: fade 36s linear infinite;
+        -ms-animation: fade 36s linear infinite;
+        -o-animation: fade 36s linear infinite;
+        animation: fade 36s linear infinite;
+    }
+    .slideshow .i2{
+        -webkit-animation-delay: 6s;
+        -moz-animation-delay: 6s;
+        -ms-animation-delay: 6s;
+        -o-animation-delay: 6s;
+        animation-delay: 6s;
+    }
+    .slideshow .i3{
+        -webkit-animation-delay: 12s;
+        -moz-animation-delay: 12s;
+        -ms-animation-delay: 12s;
+        -o-animation-delay: 12s;
+        animation-delay: 121s;
+    }
+    .slideshow .i4{
+        -webkit-animation-delay: 18s;
+        -moz-animation-delay: 18s;
+        -ms-animation-delay: 18s;
+        -o-animation-delay: 18s;
+        animation-delay: 18s;
+    }
+    .slideshow .i5{
+        -webkit-animation-delay: 24s;
+        -moz-animation-delay: 24s;
+        -ms-animation-delay: 24s;
+        -o-animation-delay: 24s;
+        animation-delay: 24s;
+    }
+    .slideshow .i6{
+        -webkit-animation-delay: 30s;
+        -moz-animation-delay: 30s;
+        -ms-animation-delay: 30s;
+        -o-animation-delay: 30s;
+        animation-delay: 30s;
+    }
+    #slider{
+        height: 180px;
+        box-shadow: 4px 4px 10px black;
+    }
+    #mask{
+        position: absolute;
+        height: 180px;
+        overflow: hidden;
+    }
+    #mask img{
+        -webkit-animation: slide 30s ease-in-out 2s infinite;
+        -moz-animation: slide 30s ease-in-out 2s infinite;
+        -ms-animation: slide 30s ease-in-out 2s infinite;
+        -o-animation: slide 30s ease-in-out 2s infinite;
+        animation: slide 30s ease-in-out 2s infinite;
+    }
+    .art .linklist{
+        padding: 0;
+        box-shadow: none;
+    }
+    .linklist p{
+        padding: 1em;
+        box-shadow: 4px 4px 10px black inset;
+    }
+    .linklist ul{
+        background-clip: padding-box;
+        border: none;
+        border-radius: 0rem 0rem 2rem 2rem;       
+        list-style: none;
+        padding: 0;
+    }
+    .linklist ul li a{
+        padding: 0.5em 0 0.3em 0;
+        border-top: 10px solid grey;
+        border-radius: 0;
+        box-shadow: 4px 4px 10px black inset;
+    }
+    .linklist ul li:last-child a{
+        border-radius: 0rem 0rem 2rem 2rem;
+        padding-bottom: 1em;
+    }
+    #tutorial{
+        color: whitesmoke;
+        text-shadow: 1px 1px 2px black;
+        background-color: dimgrey;
+        background-clip: padding-box;
+        padding: 0;
+        border-top: 10px solid grey;
+        border-bottom: 10px solid grey;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+    }
+    #tutorial a{
+        padding: 1em;
+        border-radius: 0;
+        box-shadow: 4px 4px 10px black inset;
+    }
+    #contart form{
+        background: transparent;
+        color: whitesmoke;
+        text-shadow: 2px 2px 2px black;
+    }
+    #contart form p:last-of-type{
+        text-align: center;
+    }
+    #contart form p{
+        padding: 1em 3em;
+    }
+    label{
+        display: inline-block;
+        width: 24%;
+        text-align: right;
+        padding-bottom: 0.3em;
+        padding-right: 0.5em;
+    }
+    input, textarea, select{
+        background: silver;
+        padding: 0.2em 1em 0.2em 1em;
+        border: 2px solid grey;
+        box-shadow: 3px 3px 9px black;
+    }
+    input, select{
+        border-radius: 16px;
+    }
+    input[type="text"], input[type="email"], select{
+        width: 75%;
+    }
+    textarea{
+        width: 100%;        
+    }
+    input:focus, textarea:focus, select:focus{
+        outline: none;
+    }    
+    input[type="text"]:focus, input[type="email"]:focus, textarea:focus, select:focus{
+        background: white;
+        box-shadow: 0px 0px 10px white;
+    }
+    input[type="submit"], input[type="reset"]{
+        font-size: 18px;
+        margin: 1em 2em 0em 2em;
+        background: linear-gradient(silver,grey,black);
+        background: -webkit-linear-gradient(silver,grey,black);
+        background: -moz-linear-gradient(silver,grey,black);
+        background: -ms-linear-gradient(silver,grey,black);
+        background: -o-linear-gradient(silver,grey,black);
+        border-top: 2px solid grey;
+        border-bottom: 2px solid #696969;
+        border-left: 2px solid grey;
+        border-right: 2px solid #696969;
+        font-size: 16px;
+        color: whitesmoke;
+        text-shadow: 2px 2px 2px black;
+        width: 25%;
+        margin: 0 12.5%
+    }
+    input[type="submit"]:active, input[type="reset"]:active{        
+        box-shadow: 3px 3px 6px black inset;
+        text-shadow: -1px -1px 4px white;
+    }
+    aside{
+        min-width: 200px;
+        width: 14%;
+        top: 710px;
+        float: left;
+        clear: left;
+    }
+    aside p{
+        text-align: center;        
+        border-radius: 2rem 2rem 2rem 2rem;
+        margin-bottom: 2em;
+        margin-right: 1em;
+        border-top: 2px solid grey;
+        border-bottom: 2px solid #696969;
+        border-left: 2px solid grey;
+        border-right: 2px solid #696969;
+        box-shadow: 6px 6px 10px black;
+        background: -webkit-linear-gradient(silver,#602,black);
+        background: -moz-linear-gradient(silver,#602,black);
+        background: -ms-linear-gradient(silver,#602,black);
+        background: -o-linear-gradient(silver,#602,black);
+        background: linear-gradient(silver,#602,black);
+    }
+    aside p a{
+        display: block;
+        padding: 0.5em 1em 0.5em 1em;        
+        text-decoration: none;
+        color: silver;
+        text-shadow: 1px 1px 2px black;
+    }
+    aside p:hover a{
+        color: white;
+        text-shadow: -1px -1px 6px white;
+    }
+    aside p:active{
+        box-shadow: 6px 6px 10px black inset;
+    }
+    footer{
+        clear: left;
+        padding: 1em;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        opacity: 0.5;
+    }
+    .copy{
+        float: right;
+    }
+}
+@media (min-width:1024px) and (min-height:800px){ /*desktop*/
+    .symbol, span{
+        display: none;
+    }
+    body{
+        font-size: large;
+        background-size: 100%;       
+        background-repeat: repeat-y;
+        background-attachment: fixed;
+    }
+    #homebody{
+        background-image: url(../images/DSC01688.JPG);        
+    }
+    #aboutbody{
+        background-image: url(../images/DSC00575.JPG);
+    }
+    #portbody{
+        background-image: url(../images/DSC006791A.JPG);        
+    }
+    #hobbybody{
+        background-image: url(../images/DSC00642.JPG);        
+    }
+    #linkbody{
+        background-image: url(../images/DSC01613.JPG);        
+    }
+    #contactbody{
+        background-image: url(../images/DSC00584.JPG);        
+    }
+    #graph{
+        text-align: center;
+        background: -webkit-linear-gradient(left,transparent,silver,transparent);
+        background: -moz-linear-gradient(left,transparent,silver,transparent);
+        background: -ms-linear-gradient(left,transparent,silver,transparent);
+        background: -o-linear-gradient(left,transparent,silver,transparent);
+        background: linear-gradient(left,transparent,silver,transparent);
+        box-shadow: 6px 6px 10px black;
+        opacity: 0.75;
+        margin-top: 1em;
+        margin-bottom: 2em;
+    }
+    h1{
+        text-align: center;        
+        width: 80%;
+        margin-left: 20%;
+        position: absolute;
+        float: right;
+        top: 124px;
+    }
+    .main{
+        min-width: 1000px;
+        width: 70%;
+    }    
+    #menu{
+        min-width: 200px;
+        width: 14%;
+        position: fixed;
+        float: left;
+    }
+    #menu ul li{
+        list-style-type: none;
+    }
+    #dropdown{
+        display: none;
+    }
+    #menu ul li ul{
+        overflow: visible;
+    }
+    #menu ul li ul li{
+        text-align: center;        
+        border-radius: 2rem 2rem 2rem 2rem;
+        background-clip: border-box;
+        margin-bottom: 2em;
+        margin-right: 1em;
+        border-top: 2px solid grey;
+        border-bottom: 2px solid #696969;
+        border-left: 2px solid grey;
+        border-right: 2px solid #696969;
+        box-shadow: 6px 6px 10px black;
+    }
+    #menu ul li ul li:nth-of-type(1){
+        background: -webkit-linear-gradient(silver,#006699,black);
+        background: -moz-linear-gradient(silver,#006699,black);
+        background: -ms-linear-gradient(silver,#006699,black);
+        background: -o-linear-gradient(silver,#006699,black);
+        background: linear-gradient(silver,#006699,black);
+    }
+    #menu .selected:nth-of-type(1){
+        background: #006699;
+    }
+    #menu ul li ul li:nth-of-type(2){
+        background: -webkit-linear-gradient(silver,#3399CC,black);
+        background: -moz-linear-gradient(silver,#3399CC,black);
+        background: -ms-linear-gradient(silver,#3399CC,black);
+        background: -o-linear-gradient(silver,#3399CC,black);
+        background: linear-gradient(silver,#3399CC,black);
+    }
+    #menu .selected:nth-of-type(2){
+        background: #3399CC;
+    }
+    #menu ul li ul li:nth-of-type(3){
+        background: -webkit-linear-gradient(silver,#66CCCC,black);
+        background: -moz-linear-gradient(silver,#66CCCC,black);
+        background: -ms-linear-gradient(silver,#66CCCC,black);
+        background: -o-linear-gradient(silver,#66CCCC,black);
+        background: linear-gradient(silver,#66CCCC,black);
+    }
+    #menu .selected:nth-of-type(3){
+        background: #66CCCC;
+    }
+    #menu ul li ul li:nth-of-type(4){
+        background: -webkit-linear-gradient(silver,#009999,black);
+        background: -moz-linear-gradient(silver,#009999,black);
+        background: -ms-linear-gradient(silver,#009999,black);
+        background: -o-linear-gradient(silver,#009999,black);
+        background: linear-gradient(silver,#009999,black);
+    }
+    #menu .selected:nth-of-type(4){
+        background: #009999;
+    }
+    #menu ul li ul li:nth-of-type(5){
+        background: -webkit-linear-gradient(silver,#006666,black);
+        background: -moz-linear-gradient(silver,#006666,black);
+        background: -ms-linear-gradient(silver,#006666,black);
+        background: -o-linear-gradient(silver,#006666,black);
+        background: linear-gradient(silver,#006666,black);
+    }
+    #menu .selected:nth-of-type(5){
+        background: #006666;
+    }
+    #menu ul li ul li:nth-of-type(6){
+        background: -webkit-linear-gradient(silver,#336666,black);
+        background: -moz-linear-gradient(silver,#336666,black);
+        background: -ms-linear-gradient(silver,#336666,black);
+        background: -o-linear-gradient(silver,#336666,black);
+        background: linear-gradient(silver,#336666,black);
+    }
+    #menu .selected:nth-of-type(6){
+        background: #336666;
+    }
+    #menu .word{
+        display: block;
+        padding: 0.5em 1em 0.5em 1em;        
+        text-decoration: none;
+        color: silver;
+        text-shadow: 1px 1px 2px black;
+    }
+    #menu .selected{
+        border-radius: 2rem 0rem 0rem 2rem;
+        margin-right: -0.15rem;
+        margin-left: 2em;
+        border-right: none;
+        box-shadow: none;
+    }
+    #menu .selected .word{
+        color: white;
+        padding-right: 0em;
+    }
+    #menu ul li ul li:hover .word{
+        color: white;
+        text-shadow: -1px -1px 6px white;
+    }
+    #menu ul li ul li:active{
+        box-shadow: 6px 6px 10px black inset;
+    }
+    .art{
+        min-height: 450px;
+        margin-left: 20%;
+        padding: 1em 2em;
+        border-top: 2px solid grey;
+        border-bottom: 2px solid #696969;
+        border-left: 2px solid grey;
+        border-right: 2px solid #696969;
+        box-shadow: 4px 4px 12px black;
+    }
+    #homeart{
+        background: linear-gradient(left,#006699,transparent 90%);
+        background: -webkit-linear-gradient(left,#006699,transparent 90%);
+        background: -moz-linear-gradient(left,#006699,transparent 90%);
+        background: -ms-linear-gradient(left,#006699,transparent 90%);
+        background: -o-linear-gradient(left,#006699,transparent 90%);
+    }
+    #aboutart{
+        background: linear-gradient(left,#3399CC,transparent 90%);
+        background: -webkit-linear-gradient(left,#3399CC,transparent 90%);
+        background: -moz-linear-gradient(left,#3399CC,transparent 90%);
+        background: -ms-linear-gradient(left,#3399CC,transparent 90%);
+        background: -o-linear-gradient(left,#3399CC,transparent 90%);
+    }
+    #portart{
+        background: linear-gradient(left,#66CCCC,transparent 90%);
+        background: -webkit-linear-gradient(left,#66CCCC,transparent 90%);
+        background: -moz-linear-gradient(left,#66CCCC,transparent 90%);
+        background: -ms-linear-gradient(left,#66CCCC,transparent 90%);
+        background: -o-linear-gradient(left,#66CCCC,transparent 90%);
+    }
+    #hobart{
+        background: linear-gradient(left,#009999,transparent 90%);
+        background: -webkit-linear-gradient(left,#009999,transparent 90%);
+        background: -moz-linear-gradient(left,#009999,transparent 90%);
+        background: -ms-linear-gradient(left,#009999,transparent 90%);
+        background: -o-linear-gradient(left,#009999,transparent 90%);
+    }
+    #linkart{
+        background: linear-gradient(left,#006666,transparent 90%);
+        background: -webkit-linear-gradient(left,#006666,transparent 90%);
+        background: -moz-linear-gradient(left,#006666,transparent 90%);
+        background: -ms-linear-gradient(left,#006666,transparent 90%);
+        background: -o-linear-gradient(left,#006666,transparent 90%);
+    }
+    #contart{
+        background: linear-gradient(left,#336666,transparent 90%);
+        background: -webkit-linear-gradient(left,#336666,transparent 90%);
+        background: -moz-linear-gradient(left,#336666,transparent 90%);
+        background: -ms-linear-gradient(left,#336666,transparent 90%);
+        background: -o-linear-gradient(left,#336666,transparent 90%);
+    }
+    h2{
+        font-family: monospace, serif;
+        font-size: 27px;
+        background: -webkit-linear-gradient(grey,silver,grey 80%);
+        background: -moz-linear-gradient(grey,silver,grey 80%);
+        background: -ms-linear-gradient(grey,silver,grey 80%);
+        background: -o-linear-gradient(grey,silver,grey 80%);
+        background: linear-gradient(grey,silver,grey 80%);
+        text-align: center;
+        text-transform: capitalize;        
+        text-shadow: -1px -1px 2px silver;
+        color: #660022;
+        margin-top: 20px;
+        padding: 0.25em 1em 0.25em 1em;
+        border-radius: 2rem 2rem 0rem 0rem;
+    }
+    .art > h2:first-child{
+        color: black;
+        border-top: 2px solid dimgrey;
+        border-bottom: 2px solid dimgrey;
+        border-radius: 2rem 2rem 2rem 2rem;
+        margin-bottom: 2rem;
+    }
+    .art article, .art form{        
+        margin-bottom: 2em;
+        padding: 1em;
+        border-top: 0px solid grey;
+        border: 2px solid grey;
+        border-radius: 0rem 0rem 2rem 2rem;
+        background: silver;
+        box-shadow: 4px 4px 10px black inset;
+        position: relative;
+        width: 100%;
+    }
+    #profile{
+        background-image: url(../images/DSC06804m.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: whitesmoke;
+        width: 70%;
+        height: 390px;
+        border: 24px solid whitesmoke;
+        box-shadow: 4px 4px 10px black;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    #aboutprofile{
+        line-height: 1.8;
+        display: inline-block;
+        width: 30%;
+        margin-left: 69%;
+        margin-top: 6%;
+        float: right;
+        padding-right: 1em;
+        position: absolute;
+    }
+    dt{
+        color: whitesmoke;
+        text-shadow: 3px 3px 6px black;
+        text-transform: capitalize;
+    }
+    dd{
+        text-indent: 1em;
+    }
+    .projects{
+        display: table;
+    }
+    .projects section{
+        display: table-row;
+    }
+    .projects section > div{
+        display: table-cell;
+        padding: 0.5em 0 0.5em 1em;
+    }
+    .projects section > div h3{
+        color: whitesmoke;
+        text-shadow: 3px 3px 6px black;
+        text-transform: capitalize;
+        padding-bottom: 0.5em;
+    }
+    a[href*=Bea]{
+        display: block;
+        color: transparent;
+        text-shadow: none;
+        background-image: url("../images/boekhandel.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 360px;
+        height: 250px;
+        border-radius: 0;
+        box-shadow: 4px 4px 10px black;        
+    }
+    a[href*=Bea]:hover{
+        opacity: 0.5;
+        color: transparent;
+        text-shadow: none;
+        box-shadow: 4px 4px 10px black;
+    }
+    a[href*=Pukkel]{
+        display: block;
+        color: transparent;
+        text-shadow: none;
+        background-image: url("../images/pukkelpop.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 360px;
+        height: 250px;
+        border-radius: 0;
+        box-shadow: 4px 4px 10px black;    
+    }
+    a[href*=Pukkel]:hover{
+        opacity: 0.5;
+        color: transparent;
+        text-shadow: none;
+        box-shadow: 4px 4px 10px black;
+    }
+    .slideshow{
+        color: silver;
+        text-shadow: 1px 1px 2px black;
+        position: relative;
+        width: 360px;
+        height: 504px;
+        box-shadow: 4px 4px 10px black;
+        margin-bottom: 0.5em;
+    }
+    #portret, #abstract{
+        height: 270px;
+    }
+    #staand{
+        height: 480px;
+    }
+    #dj{
+        height: 240px;
+    }
+    .slideshow img{
+        position: absolute;
+        opacity: 0; 
+        -webkit-animation: fade 36s linear infinite; 
+        -moz-animation: fade 36s linear infinite;
+        -ms-animation: fade 36s linear infinite;
+        -o-animation: fade 36s linear infinite;
+        animation: fade 36s linear infinite;
+    }
+    .slideshow .i2{
+        -webkit-animation-delay: 6s;
+        -moz-animation-delay: 6s;
+        -ms-animation-delay: 6s;
+        -o-animation-delay: 6s;
+        animation-delay: 6s;
+    }
+    .slideshow .i3{
+        -webkit-animation-delay: 12s;
+        -moz-animation-delay: 12s;
+        -ms-animation-delay: 12s;
+        -o-animation-delay: 12s;
+        animation-delay: 121s;
+    }
+    .slideshow .i4{
+        -webkit-animation-delay: 18s;
+        -moz-animation-delay: 18s;
+        -ms-animation-delay: 18s;
+        -o-animation-delay: 18s;
+        animation-delay: 18s;
+    }
+    .slideshow .i5{
+        -webkit-animation-delay: 24s;
+        -moz-animation-delay: 24s;
+        -ms-animation-delay: 24s;
+        -o-animation-delay: 24s;
+        animation-delay: 24s;
+    }
+    .slideshow .i6{
+        -webkit-animation-delay: 30s;
+        -moz-animation-delay: 30s;
+        -ms-animation-delay: 30s;
+        -o-animation-delay: 30s;
+        animation-delay: 30s;
+    }
+    #slider{
+        height: 180px;
+        box-shadow: 4px 4px 10px black;
+    }
+    #mask{
+        position: absolute;
+        height: 180px;
+        overflow: hidden;
+    }
+    #mask img{
+        -webkit-animation: slide 30s ease-in-out 2s infinite;
+        -moz-animation: slide 30s ease-in-out 2s infinite;
+        -ms-animation: slide 30s ease-in-out 2s infinite;
+        -o-animation: slide 30s ease-in-out 2s infinite;
+        animation: slide 30s ease-in-out 2s infinite;
+    }
+    .art .linklist{
+        padding: 0;
+        box-shadow: none;
+    }
+    .linklist p{
+        padding: 1em;
+        box-shadow: 4px 4px 10px black inset;
+    }
+    .linklist ul{
+        background-clip: padding-box;
+        border: none;
+        border-radius: 0rem 0rem 2rem 2rem;       
+        list-style-type: none;
+        padding: 0;
+    }
+    .linklist ul li a{
+        padding: 0.5em 0 0.3em 0;
+        border-top: 10px solid grey;
+        border-radius: 0;
+        box-shadow: 4px 4px 10px black inset;
+    }
+    .linklist ul li:last-child a{
+        border-radius: 0rem 0rem 2rem 2rem;
+        padding-bottom: 1em;
+    }
+    #tutorial{
+        color: whitesmoke;
+        text-shadow: 1px 1px 2px black;
+        background-color: dimgrey;
+        background-clip: padding-box;
+        padding: 0;
+        border-top: 10px solid grey;
+        border-bottom: 10px solid grey;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+    }
+    #tutorial a{
+        padding: 1em;
+        border-radius: 0;
+        box-shadow: 4px 4px 10px black inset;
+    }
+    #contart form{
+        background: transparent;
+        color: whitesmoke;
+        text-shadow: 2px 2px 2px black;
+    }
+    #contart form p:last-of-type{
+        text-align: center;
+    }
+    #contart form p{
+        padding: 1em 3em;
+    }
+    label{
+        display: inline-block;
+        width: 25%;
+        text-align: right;
+        padding-bottom: 0.3em;
+        padding-right: 0.5em;
+    }
+    input, textarea, select{
+        background: silver;
+        padding: 0.2em 1em 0.2em 1em;
+        border: 2px solid grey;
+        box-shadow: 3px 3px 9px black;
+    }
+    input, select{
+        border-radius: 16px;
+    }
+    input[type="text"], input[type="email"], select{
+        width: 73%;
+    }
+    textarea{
+        width: 100%;        
+    }
+    input:focus, textarea:focus, select:focus{
+        outline: none;
+    }    
+    input[type="text"]:focus, input[type="email"]:focus, textarea:focus, select:focus{
+        background: white;
+        box-shadow: 0px 0px 10px white;
+    }
+    input[type="submit"], input[type="reset"]{
+        font-size: 18px;
+        margin: 1em 2em 0em 2em;
+        background: linear-gradient(silver,grey,black);
+        background: -webkit-linear-gradient(silver,grey,black);
+        background: -moz-linear-gradient(silver,grey,black);
+        background: -ms-linear-gradient(silver,grey,black);
+        background: -o-linear-gradient(silver,grey,black);
+        border-top: 2px solid grey;
+        border-bottom: 2px solid #696969;
+        border-left: 2px solid grey;
+        border-right: 2px solid #696969;
+        font-size: 16px;
+        color: whitesmoke;
+        text-shadow: 2px 2px 2px black;
+        width: 25%;
+        margin: 0 12.5%
+    }
+    input[type="submit"]:active, input[type="reset"]:active{        
+        box-shadow: 3px 3px 6px black inset;
+        text-shadow: -1px -1px 4px white;
+    }
+    aside{
+        min-width: 200px;
+        width: 14%;
+        position: fixed;
+        top: 712px;
+        float: left;
+        clear: left;
+    }
+    aside p{
+        text-align: center;        
+        border-radius: 2rem 2rem 2rem 2rem;
+        margin-bottom: 2em;
+        margin-right: 1em;
+        border-top: 2px solid grey;
+        border-bottom: 2px solid #696969;
+        border-left: 2px solid grey;
+        border-right: 2px solid #696969;
+        box-shadow: 6px 6px 10px black;
+        background: -webkit-linear-gradient(silver,#602,black);
+        background: -moz-linear-gradient(silver,#602,black);
+        background: -ms-linear-gradient(silver,#602,black);
+        background: -o-linear-gradient(silver,#602,black);
+        background: linear-gradient(silver,#602,black);
+    }
+    aside p a{
+        display: block;
+        padding: 0.5em 1em 0.5em 1em;        
+        text-decoration: none;
+        color: silver;
+        text-shadow: 1px 1px 2px black;
+    }
+    aside p:hover a{
+        color: white;
+        text-shadow: -1px -1px 6px white;
+    }
+    aside p:active{
+        box-shadow: 6px 6px 10px black inset;
+    }
+    footer{
+        clear: left;
+        padding: 1em;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        opacity: 0.5;
+    }
+    .copy{
+        float: right;
+    }
+}
